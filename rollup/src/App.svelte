@@ -3,9 +3,12 @@
   import { TezosToolkit } from "@taquito/taquito";
 
   let Tezos: TezosToolkit;
+  let currentLevel: number | null = null;
 
-  onMount(() => {
+  onMount(async () => {
     Tezos = new TezosToolkit("https://mainnet.api.tez.ie");
+    const blockHeader = await Tezos.rpc.getBlockHeader();
+    currentLevel = blockHeader.level;
   });
 </script>
 
@@ -33,5 +36,5 @@
 
 <main>
   <h1>Hello Taquito!</h1>
-  <p>test</p>
+  <p>Current level: {currentLevel ?? "Loading..."}</p>
 </main>

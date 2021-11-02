@@ -45,10 +45,6 @@ export default {
     file: "public/build/bundle.js"
   },
   plugins: [
-    builtins(),
-    globals(),
-    commonjs({ include: "node_modules/**", transformMixedEsModules: true }),
-
     svelte({
       preprocess: sveltePreprocess({ sourceMap: !production }),
       compilerOptions: {
@@ -65,15 +61,14 @@ export default {
     // some cases you'll need additional configuration -
     // consult the documentation for details:
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    resolve({
+    /*resolve({
       browser: true,
       dedupe: ["svelte"]
-    }),
+    }),*/
     typescript({
       sourceMap: !production,
       inlineSources: !production
     }),
-
     // In dev mode, call `npm run start` once
     // the bundle has been generated
     !production && serve(),
@@ -84,7 +79,11 @@ export default {
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser()
+    production && terser(),
+    resolve({ preferBuiltins: false }),
+    commonjs({ transformMixedEsModules: true }),
+    globals(),
+    builtins()
   ],
   watch: {
     clearScreen: false
