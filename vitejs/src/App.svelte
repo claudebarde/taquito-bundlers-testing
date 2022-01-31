@@ -7,8 +7,8 @@
   import ContractCall from "./lib/ContractCall.svelte";
   import ConnectWallet from "./lib/ConnectWallet.svelte";
 
-  const contractAddress = "KT1T836HqhBu9waqmknStVDCXu2WogZtzsNz";
-  const rpcUrl = "https://granadanet.api.tez.ie";
+  const contractAddress = "KT1T2gL26SwYMxpkR5SZT1pHRBF84knfw8Cg";
+  const rpcUrl = "https://hangzhounet.api.tez.ie";
   let Tezos: TezosToolkit;
   let wallet: BeaconWallet;
   let userAddress = "";
@@ -16,7 +16,7 @@
 
   const connectWallet = async () => {
     await wallet.requestPermissions({
-      network: { type: NetworkType.GRANADANET, rpcUrl }
+      network: { type: NetworkType.HANGZHOUNET, rpcUrl }
     });
     userAddress = await wallet.getPKH();
     Tezos.setWalletProvider(wallet);
@@ -36,7 +36,7 @@
 
     wallet = new BeaconWallet({
       name: "Taquito Vitejs Test",
-      preferredNetwork: NetworkType.GRANADANET
+      preferredNetwork: NetworkType.HANGZHOUNET
     });
     const activeAccount = await wallet.client.getActiveAccount();
     if (activeAccount) {
@@ -104,5 +104,5 @@
     on:connect-wallet={connectWallet}
     on:disconnect-wallet={disconnectWallet}
   />
-  <ContractCall {Tezos} />
+  <ContractCall {Tezos} {contractAddress} />
 </main>
