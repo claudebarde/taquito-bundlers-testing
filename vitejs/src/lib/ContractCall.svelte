@@ -1,8 +1,14 @@
 <script lang="ts">
-  export let Tezos;
+  export let Tezos, contractAddress;
 
-  const simpleParam = () => {
-    console.log("transaction");
+  const simpleParam = async () => {
+    try {
+      const contract = await Tezos.wallet.at(contractAddress);
+      const op = await contract.methods.simple_param(5).send();
+      await op.confirmation();
+    } catch (error) {
+      console.error(error);
+    }
   };
 </script>
 

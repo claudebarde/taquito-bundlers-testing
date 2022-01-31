@@ -9,19 +9,22 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
-    "@tsconfig/svelte": "^2.0.1",
-    "svelte": "^3.37.0",
-    "svelte-check": "^2.1.0",
-    "svelte-preprocess": "^4.7.2",
-    "tslib": "^2.2.0",
-    "typescript": "^4.3.2",
-    "vite": "^2.5.4"
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
+    "@tsconfig/svelte": "^3.0.0",
+    "svelte": "^3.46.3",
+    "svelte-check": "^2.4.0",
+    "svelte-preprocess": "^4.10.2",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5",
+    "vite": "^2.7.13"
   },
   "dependencies": {
-    "@taquito/beacon-wallet": "^10.1.1",
-    "@taquito/taquito": "^10.1.1",
+    "@airgap/beacon-sdk": "^2.4.0-beta.2",
+    "@taquito/beacon-wallet": "^11.1.0",
+    "@taquito/taquito": "^11.1.0",
+    "buffer": "^6.0.3",
     "events": "^3.3.0",
-    "libsodium-wrappers": "^0.7.8"
+    "libsodium-wrappers": "^0.7.9",
+    "vite-compatible-readable-stream": "^3.6.0"
   }
 }
