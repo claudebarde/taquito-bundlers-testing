@@ -1,11 +1,26 @@
 {
-  "name": "taquito-test-with-parcel",
+  "name": "svelte-typescript-parcel",
   "version": "1.0.0",
-  "description": "Test of the Parcel bundler with Taquito",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "rm -rf dist && parcel serve src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html",
+    "start": "parcel src/index.html"
   },
-  "author": "Claude Barde",
-  "license": "ISC"
+  "devDependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "@tsconfig/svelte": "^3.0.0",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-svelte": "^4.0.9",
+    "sass": "^1.49.7",
+    "svelte": "^3.46.4",
+    "svelte-check": "^2.4.5",
+    "svelte-preprocess": "^3.9.12",
+    "typescript": "^3.9.10"
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ]
 }
