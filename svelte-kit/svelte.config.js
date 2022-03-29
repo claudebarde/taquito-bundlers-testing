@@ -17,9 +17,10 @@ const config = {
           // I almost have no idea why it needs `cjs` on dev and `esm` on build, but this is how it works 🤷‍♂️
           "@airgap/beacon-sdk": path.resolve(
             path.resolve(),
-            `./node_modules/@airgap/beacon-sdk/dist/${
+            /*`./node_modules/@airgap/beacon-sdk/dist/${
               process.env.NODE_ENV === "production" ? "esm" : "cjs"
-            }/index.js`
+            }/index.js`*/
+			`./node_modules/@airgap/beacon-sdk/dist/walletbeacon.min.js`
           ),
           // polyfills
           "readable-stream": "vite-compatible-readable-stream",
