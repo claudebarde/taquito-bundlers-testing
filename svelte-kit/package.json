@@ -21,9 +21,9 @@
   },
   "type": "module",
   "dependencies": {
-    "@airgap/beacon-sdk": "^2.3.10",
-    "@taquito/beacon-wallet": "^12.0.0",
-    "@taquito/taquito": "^12.0.0",
+    "@airgap/beacon-sdk": "^3.0.0",
+    "@taquito/beacon-wallet": "^12.1.0",
+    "@taquito/taquito": "^12.1.0",
     "buffer": "^6.0.3",
     "events": "^3.3.0",
     "libsodium-wrappers": "^0.7.10",
