@@ -7,8 +7,8 @@
   import ContractCall from "./lib/ContractCall.svelte";
   import ConnectWallet from "./lib/ConnectWallet.svelte";
 
-  const contractAddress = "KT1T2gL26SwYMxpkR5SZT1pHRBF84knfw8Cg";
-  const rpcUrl = "https://hangzhounet.api.tez.ie";
+  const contractAddress = "KT1Vt5eFxzBbD7k2AJZhuJzaG6bA4GEyvNqi";
+  const rpcUrl = "https://ghostnet.ecadinfra.com";
   let Tezos: TezosToolkit;
   let wallet: BeaconWallet;
   let userAddress = "";
@@ -16,7 +16,7 @@
 
   const connectWallet = async () => {
     await wallet.requestPermissions({
-      network: { type: NetworkType.HANGZHOUNET, rpcUrl }
+      network: { type: NetworkType.GHOSTNET, rpcUrl }
     });
     userAddress = await wallet.getPKH();
     Tezos.setWalletProvider(wallet);
@@ -36,7 +36,7 @@
 
     wallet = new BeaconWallet({
       name: "Taquito Vitejs Test",
-      preferredNetwork: NetworkType.HANGZHOUNET
+      preferredNetwork: NetworkType.GHOSTNET
     });
     const activeAccount = await wallet.client.getActiveAccount();
     if (activeAccount) {
